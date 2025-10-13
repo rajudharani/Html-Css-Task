@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StayHub | Property Management</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="left-section">
+      <div class="logo">
+        <img src="logo.png" alt="StayHub Logo">
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">Features</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Property Type ▾</a>
+            <div class="dropdown-content">
+              <a href="#">Vacation Rentals</a>
+              <a href="#">Private units</a>
+              <a href="#" class="nav-link active">Serviced Apartments</a>
+            </div>
+          </li>
+          <li><a href="#" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <button class="contact-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Contact Us
+      </button>
+      <span class="language-toggle">العربية</span>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="display.png" alt="Modern Apartment" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Effortlessly Manage Multiple Units Like a Pro</h1>
+      <p class="hero-subtitle">
+        Ditch spreadsheets and manual updates — automate everything with StayHub.
+      </p>
+      <div class="hero-buttons">
+        <button class="primary-btn">Start Free Trial (7 Days)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY BENEFITS -->
+  <section class="benefits">
+    <h2 class="section-title">Key Benefits</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <img src="benefit1.png" alt="Identity Verification">
+        <h3>Identity Verification</h3>
+      </div>
+      <div class="benefit-card">
+        <img src="benefit2.png" alt="Governmental Integration">
+        <h3>Governmental Integration</h3>
+      </div>
+      <div class="benefit-card">
+        <img src="benefit3.png" alt="Centralized Control">
+        <h3>Centralized Control</h3>
+      </div>
+      <div class="benefit-card">
+        <img src="benefit4.png" alt="Bulk Smart Lock Management">
+        <h3>Bulk Smart Lock Management</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <h2 class="section-title"><center>How StayHub Works for You</center></h2>
+    <div class="how-grid">
+      <div class="how-item">
+        <h3>Bulk Upload</h3>
+        <p>Add all units and details in one go to your channels.</p>
+      </div>
+      <div class="how-item">
+        <h3>Automate</h3>
+        <p>Sync locks, screen guests, and submit compliance reports.</p>
+      </div>
+      <div class="how-item">
+        <h3>Optimize</h3>
+        <p>Track occupancy rates and adjust pricing dynamically.</p>
+      </div>
+    </div>
+  </section>
+    <!-- Messenger Floating Button -->
+  <a href="https://m.me/stayhub" class="messenger-float" target="_blank" aria-label="Chat on Messenger">
+    <img src="msg.png" alt="Messenger Chat" />
+  </a>
+
+</body>
+<script>
+   // Sticky header background
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  const revealElements = document.querySelectorAll('.reveal, .benefit-card, .how-item');
+  const revealOnScroll = () => {
+    revealElements.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const visiblePoint = 100;
+      if (elementTop < windowHeight - visiblePoint) {
+        el.classList.add('active', 'visible');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
+
+</html>
