@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StayHub | Welcome</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    
+    .slide-in-right {
+      animation: slideInRight 0.6s ease-out;
+    }
+    
+    .slide-in-left {
+      animation: slideInLeft 0.6s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .carousel-transition {
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Smooth, thin gray scrollbar for dropdowns (always visible) */
+    .custom-scroll { scrollbar-width: thin; scrollbar-color: #9ca3af #f3f4f6; scrollbar-gutter: stable both-edges; }
+    .custom-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+    .custom-scroll::-webkit-scrollbar-thumb { background-color: #9ca3af; border-radius: 8px; }
+    .custom-scroll::-webkit-scrollbar-track { background: #f3f4f6; }
+    
+    .bg-icon {
+      position: absolute;
+      opacity: 0.25; /* make background icons more visible */
+    }
+    .bg-icon svg {
+      width: 72px;
+      height: 72px;
+      stroke: rgba(255,255,255,0.95);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .bg-icon.house svg {
+      width: 47px;
+      height: 46px;
+    }
+    .bg-icon.key svg {
+      width: 34.803px;
+      height: 34.762px;
+      stroke: #DDEEFB;
+    }
+
+    .angled-panel {
+      border-radius: 32px;
+      /* previous steeper angled right edge */
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    }
+    
+    .phone-input:focus {
+      outline: none;
+      border-bottom-color: #25A4E8 ;
+    }
+    
+    .error-message {
+      color: #ef4444;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    
+    .success-message {
+      color: #10b981;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    
+    .otp-input {
+      text-align: center;
+      font-weight: 600;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+    }
+    
+    .otp-input:focus {
+      outline: none;
+      border-color: #25A4E8;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    .otp-input.filled {
+      border-color: hsla(163, 19%, 85%, 0.344);
+      background-color: #f0fdf4;
+    }
+  </style>
+</head>
+<body class="bg-purple-50 min-h-screen flex items-end justify-start pt-5 px-5 pb-0 overflow-hidden">
+
+   <div class="flex flex-col md:flex-row w-[1440px] h-[860px] gap-10 md:gap-20 lg:gap-28 xl:gap-36 2xl:gap-40">
+
+    <!-- Left Section (Carousel) -->
+    <div class="bg-[#7C69E8] text-white angled-panel w-[720px] h-[700px] flex-shrink-0 p-6 md:p-8 pt-6 pb-6 md:pb-8 mb-0 flex flex-col justify-end items-center text-center relative overflow-hidden">
+      <!-- Background Icons (SVG) -->
+      <!-- House top-left -->
+      <div class="bg-icon house top-10 left-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="46" viewBox="0 0 47 46" fill="none">
+          <path d="M44.7662 45.4001H2.03598C1.16001 45.4001 0.433594 44.6737 0.433594 43.7977C0.433594 42.9217 1.16001 42.1953 2.03598 42.1953H44.7662C45.6422 42.1953 46.3686 42.9217 46.3686 43.7977C46.3686 44.6737 45.6422 45.4001 44.7662 45.4001Z" fill="#DDEEFB"/>
+          <path d="M5.66961 43.7969H2.46484L2.57167 18.0947C2.57167 16.2787 3.40491 14.5909 4.83637 13.4799L19.792 1.83589C21.9071 0.190772 24.8769 0.190772 27.0134 1.83589L41.9689 13.4585C43.379 14.5695 44.2336 16.3 44.2336 18.0947V43.7969H41.0289V18.1161C41.0289 17.3042 40.6443 16.5137 40.0034 16.001L25.0478 4.37833C24.0863 3.63056 22.7403 3.63056 21.7575 4.37833L6.80196 16.0223C6.16101 16.5137 5.77644 17.3042 5.77644 18.1161L5.66961 43.7969Z" fill="#DDEEFB"/>
+          <path d="M34.0827 45.3998H12.7176C11.8416 45.3998 11.1152 44.6733 11.1152 43.7974V23.5005C11.1152 20.8512 13.2731 18.6934 15.9224 18.6934H30.878C33.5272 18.6934 35.6851 20.8512 35.6851 23.5005V43.7974C35.6851 44.6733 34.9587 45.3998 34.0827 45.3998ZM14.32 42.195H32.4804V23.5005C32.4804 22.6245 31.7539 21.8981 30.878 21.8981H15.9224C15.0464 21.8981 14.32 22.6245 14.32 23.5005V42.195Z" fill="#DDEEFB"/>
+          <path d="M19.1278 36.3202C18.2518 36.3202 17.5254 35.5938 17.5254 34.7178V31.513C17.5254 30.6371 18.2518 29.9106 19.1278 29.9106C20.0037 29.9106 20.7302 30.6371 20.7302 31.513V34.7178C20.7302 35.5938 20.0037 36.3202 19.1278 36.3202Z" fill="#DDEEFB"/>
+          <path d="M26.6057 14.4206H20.1961C19.3202 14.4206 18.5938 13.6942 18.5938 12.8182C18.5938 11.9422 19.3202 11.2158 20.1961 11.2158H26.6057C27.4816 11.2158 28.2081 11.9422 28.2081 12.8182C28.2081 13.6942 27.4816 14.4206 26.6057 14.4206Z" fill="#DDEEFB"/>
+        </svg>
+      </div>
+      <!-- House top-right -->
+      <div class="bg-icon house top-10 right-20">
+        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="46" viewBox="0 0 47 46" fill="none">
+          <path d="M44.7662 45.4001H2.03598C1.16001 45.4001 0.433594 44.6737 0.433594 43.7977C0.433594 42.9217 1.16001 42.1953 2.03598 42.1953H44.7662C45.6422 42.1953 46.3686 42.9217 46.3686 43.7977C46.3686 44.6737 45.6422 45.4001 44.7662 45.4001Z" fill="#DDEEFB"/>
+          <path d="M5.66961 43.7969H2.46484L2.57167 18.0947C2.57167 16.2787 3.40491 14.5909 4.83637 13.4799L19.792 1.83589C21.9071 0.190772 24.8769 0.190772 27.0134 1.83589L41.9689 13.4585C43.379 14.5695 44.2336 16.3 44.2336 18.0947V43.7969H41.0289V18.1161C41.0289 17.3042 40.6443 16.5137 40.0034 16.001L25.0478 4.37833C24.0863 3.63056 22.7403 3.63056 21.7575 4.37833L6.80196 16.0223C6.16101 16.5137 5.77644 17.3042 5.77644 18.1161L5.66961 43.7969Z" fill="#DDEEFB"/>
+          <path d="M34.0827 45.3998H12.7176C11.8416 45.3998 11.1152 44.6733 11.1152 43.7974V23.5005C11.1152 20.8512 13.2731 18.6934 15.9224 18.6934H30.878C33.5272 18.6934 35.6851 20.8512 35.6851 23.5005V43.7974C35.6851 44.6733 34.9587 45.3998 34.0827 45.3998ZM14.32 42.195H32.4804V23.5005C32.4804 22.6245 31.7539 21.8981 30.878 21.8981H15.9224C15.0464 21.8981 14.32 22.6245 14.32 23.5005V42.195Z" fill="#DDEEFB"/>
+          <path d="M19.1278 36.3202C18.2518 36.3202 17.5254 35.5938 17.5254 34.7178V31.513C17.5254 30.6371 18.2518 29.9106 19.1278 29.9106C20.0037 29.9106 20.7302 30.6371 20.7302 31.513V34.7178C20.7302 35.5938 20.0037 36.3202 19.1278 36.3202Z" fill="#DDEEFB"/>
+          <path d="M26.6057 14.4206H20.1961C19.3202 14.4206 18.5938 13.6942 18.5938 12.8182C18.5938 11.9422 19.3202 11.2158 20.1961 11.2158H26.6057C27.4816 11.2158 28.2081 11.9422 28.2081 12.8182C28.2081 13.6942 27.4816 14.4206 26.6057 14.4206Z" fill="#DDEEFB"/>
+        </svg>
+      </div>
+      <!-- Card mid-left -->
+      <div class="bg-icon top-1/2 -translate-y-1/2 left-12">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+          <rect x="3" y="6" width="18" height="12" rx="2"/>
+          <path d="M3 10h18"/>
+          <path d="M7 14h4"/>
+        </svg>
+      </div>
+      <!-- Key mid-right (provided SVG spec) -->
+      <div class="bg-icon key top-1/2 -translate-y-1/2 right-16">
+        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="39" viewBox="0 0 38 39" fill="none">
+          <path d="M20.8542 2.38461C24.9946 1.58435 29.4656 2.78474 32.6841 5.98578C37.8162 11.1179 37.8162 19.4859 32.6841 24.6006C29.1003 28.167 23.9682 29.263 19.4624 27.8538L11.2685 36.0304C10.677 36.6393 9.51141 37.0046 8.67635 36.8828L4.88382 36.3609C3.63124 36.1869 2.46564 35.004 2.27428 33.7514L1.75237 29.9588C1.63059 29.1238 2.03072 27.9582 2.60482 27.3667L4.55328 25.4182L10.764 19.2075C9.37223 14.6842 10.4508 9.55215 14.0346 5.98578" stroke="#DDEEFB" stroke-width="2.48297" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10.2422 29.0718L14.2435 33.0731" stroke="#DDEEFB" stroke-width="2.48297" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M23.4806 17.7811C24.9218 17.7811 26.0902 16.6127 26.0902 15.1716C26.0902 13.7303 24.9218 12.562 23.4806 12.562C22.0395 12.562 20.8711 13.7303 20.8711 15.1716C20.8711 16.6127 22.0395 17.7811 23.4806 17.7811Z" stroke="#DDEEFB" stroke-width="2.48297" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <!-- Card bottom-left -->
+      <div class="bg-icon bottom-16 left-10">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+          <rect x="3" y="6" width="18" height="12" rx="2"/>
+          <path d="M3 10h18"/>
+          <path d="M7 14h4"/>
+        </svg>
+      </div>
+      <!-- House bottom-right -->
+      <div class="bg-icon house bottom-16 right-14">
+        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="46" viewBox="0 0 47 46" fill="none">
+          <path d="M44.7662 45.4001H2.03598C1.16001 45.4001 0.433594 44.6737 0.433594 43.7977C0.433594 42.9217 1.16001 42.1953 2.03598 42.1953H44.7662C45.6422 42.1953 46.3686 42.9217 46.3686 43.7977C46.3686 44.6737 45.6422 45.4001 44.7662 45.4001Z" fill="#DDEEFB"/>
+          <path d="M5.66961 43.7969H2.46484L2.57167 18.0947C2.57167 16.2787 3.40491 14.5909 4.83637 13.4799L19.792 1.83589C21.9071 0.190772 24.8769 0.190772 27.0134 1.83589L41.9689 13.4585C43.379 14.5695 44.2336 16.3 44.2336 18.0947V43.7969H41.0289V18.1161C41.0289 17.3042 40.6443 16.5137 40.0034 16.001L25.0478 4.37833C24.0863 3.63056 22.7403 3.63056 21.7575 4.37833L6.80196 16.0223C6.16101 16.5137 5.77644 17.3042 5.77644 18.1161L5.66961 43.7969Z" fill="#DDEEFB"/>
+          <path d="M34.0827 45.3998H12.7176C11.8416 45.3998 11.1152 44.6733 11.1152 43.7974V23.5005C11.1152 20.8512 13.2731 18.6934 15.9224 18.6934H30.878C33.5272 18.6934 35.6851 20.8512 35.6851 23.5005V43.7974C35.6851 44.6733 34.9587 45.3998 34.0827 45.3998ZM14.32 42.195H32.4804V23.5005C32.4804 22.6245 31.7539 21.8981 30.878 21.8981H15.9224C15.0464 21.8981 14.32 22.6245 14.32 23.5005V42.195Z" fill="#DDEEFB"/>
+          <path d="M19.1278 36.3202C18.2518 36.3202 17.5254 35.5938 17.5254 34.7178V31.513C17.5254 30.6371 18.2518 29.9106 19.1278 29.9106C20.0037 29.9106 20.7302 30.6371 20.7302 31.513V34.7178C20.7302 35.5938 20.0037 36.3202 19.1278 36.3202Z" fill="#DDEEFB"/>
+          <path d="M26.6057 14.4206H20.1961C19.3202 14.4206 18.5938 13.6942 18.5938 12.8182C18.5938 11.9422 19.3202 11.2158 20.1961 11.2158H26.6057C27.4816 11.2158 28.2081 11.9422 28.2081 12.8182C28.2081 13.6942 27.4816 14.4206 26.6057 14.4206Z" fill="#DDEEFB"/>
+        </svg>
+      </div>
+      
+      <!-- Carousel Content -->
+      <div class="relative z-10 w-full md:w-[360px] md:h-[420px] flex flex-col items-center justify-start">
+        <img id="carouselImg" src="slide1.png" alt="StayHub Feature" class="w-24 h-24 md:w-28 md:h-28 mb-3 md:mb-4 mx-auto carousel-transition object-contain">
+
+      <!-- Carousel Dots -->
+        <div class="flex space-x-3 mb-3 md:mb-4 justify-center">
+          <span class="dot w-[11px] h-[11px] rounded-full bg-[#FFC926] cursor-pointer transition-all duration-300" data-index="0"></span>
+          <span class="dot w-[11px] h-[11px] rounded-full border cursor-pointer transition-all duration-300 border-[#5138E0]" data-index="1"></span>
+          <span class="dot w-[11px] h-[11px] rounded-full border cursor-pointer transition-all duration-300 border-[#5138E0]" data-index="2"></span>
+        </div>
+        
+        <h3 id="carouselTitle" class="font-semibold mb-2 carousel-transition text-center text-[22px] md:text-[26px] leading-[30px] md:leading-[34px]">
+          "Discover Your Dream Getaway with a Tap!”
+        </h3>
+        <p id="carouselText" class="carousel-transition max-w-[560px] text-center text-[15px] md:text-[16px] leading-[24px] md:leading-[24px]">
+          Unearth your perfect escape in just a few taps, a world of options awaits!
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Section (Form) -->
+    <div class="flex-1 h-auto md:h-[680px] p-4 md:p-5 flex flex-col justify-center items-end rounded-br-[32px]">
+      <div class="w-full md:w-[440px] flex flex-col items-start gap-[10px] md:gap-[15px]">
+        <h3 class="w-full text-center text-lg text-purple-600 mb-2 fade-in w-400px h-20px">Welcome to</h3>
+        
+        <!-- StayHub Logo -->
+        <div class="w-full flex items-center justify-center mb-6 fade-in">
+          <img src="logo.png" alt="StayHub Logo" class="w-240px h-52.755px mr-3">
+        </div>
+
+        <!-- User Type Toggle -->
+       <div id="userToggle" 
+     class="flex w-full mb-8 rounded-full slide-in-right bg-[#EAF1F7] p-[10px] ring-1 ring-[#E0E8EF] justify-center items-center gap-[10px] flex-[1_0_0] self-stretch">
+         <button 
+  id="hostBtn" 
+  class="flex p-[10px] justify-center items-center gap-[10px] flex-[1_0_0] self-stretch w-1/2 py-3 bg-[#25A4E8] text-white font-semibold transition-all duration-300">
+  Host
+</button>
+
+          <button id="invitedBtn" class="w-1/2 py-3 bg-transparent text-gray-600 font-semibold transition-all duration-300">Invited User</button>
+      </div>
+
+        
+
+        <!-- Phone Number Form -->
+        <form id="phoneForm" class="w-full slide-in-right">
+          <label class="block text-gray-900 mb-3 font-medium">Phone No.</label>
+          <!-- Underline style phone input -->
+          <div class="mb-6 relative">
+            <div class="flex items-center gap-3 border-b border-gray-300 pb-2">
+              <!-- Hidden native select for validation fallback -->
+              <select id="countryCode" class="hidden">
+                <option value="+966">+966</option>
+              </select>
+              <!-- Trigger that opens custom country picker -->
+              <button type="button" id="openCountryPicker" class="min-w-[110px] text-left bg-transparent focus:outline-none text-[#000113] font-medium flex items-center gap-2 rounded-full px-2 py-1">
+                <span id="selectedCountry">SA +966</span>
+                <svg id="countryCaret" class="w-4 h-4 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="h-[20px] w-px bg-[#D9D9D9]"></div>
+              <input 
+                id="phoneNumber"
+                type="tel" 
+                placeholder="5xxxxxxxx" 
+                class="flex-1 phone-input bg-transparent text-[#3F3E3E] placeholder-[#3F3E3E]/70"
+                maxlength="9"
+              />
+            </div>
+            <!-- Dropdown panel -->
+            <div id="countryDropdown" class="hidden absolute left-0 top-full mt-2 w-[260px] bg-white rounded-xl shadow-2xl border border-gray-200 z-50">
+              <div class="px-3 py-2 border-b">
+                <div class="flex items-center gap-2 bg-gray-100 rounded-md px-2 py-2">
+                  <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/></svg>
+                  <input id="countryDropdownSearch" type="text" placeholder="Search country name or code" class="w-full bg-transparent outline-none text-sm" />
+                </div>
+              </div>
+              <div id="countryDropdownList" class="max-h-[220px] overflow-y-scroll pr-2 custom-scroll">
+                <!-- items injected by script -->
+              </div>
+            </div>
+          </div>
+          <div id="phoneError" class="error-message hidden"></div>
+
+       <button 
+  type="submit" 
+  id="nextBtn"
+  class="flex h-[55px] p-[7px_16px] justify-center items-center gap-[4px] self-stretch w-full bg-[#25A4E8] hover:bg-[#1E94D3] text-white font-semibold text-lg rounded-[99px] border-[1.5px] border-[#34AAEA] shadow-[0_6px_8px_rgba(82,108,122,0.20)] transition-all duration-300 transform hover:scale-105 active:scale-95">
+  Continue
+</button>
+
+      </form>
+
+        <!-- OTP Verification Form (Hidden initially) -->
+        <form id="otpForm" class="w-full hidden max-w-sm mx-auto">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-semibold text-purple-600 mb-3">Verify</h3>
+            <p class="text-gray-700 text-sm leading-6">Please enter the code we sent<br/>to <span id="phoneDisplay" class="font-bold text-black"></span></p>
+          </div>
+          
+          <div class="flex justify-center space-x-4 mb-5">
+            <input type="text" class="otp-input w-14 h-14 text-xl" maxlength="1" data-index="0">
+            <input type="text" class="otp-input w-14 h-14 text-xl" maxlength="1" data-index="1">
+            <input type="text" class="otp-input w-14 h-14 text-xl" maxlength="1" data-index="2">
+            <input type="text" class="otp-input w-14 h-14 text-xl" maxlength="1" data-index="3">
+          </div>
+
+          <p class="text-center text-gray-500 text-xs mb-2">Didn't Receive the Code ?</p>
+          <div class="text-center mb-5">
+            <button type="button" id="resendBtn" class="text-blue-500 hover:text-blue-600 text-sm font-medium">Resend Code</button>
+          </div>
+          
+          <div id="otpError" class="error-message hidden"></div>
+
+          <button 
+            type="submit" 
+            id="verifyBtn"
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full text-base font-semibold transition-colors duration-200 mb-4">
+            Verify
+          </button>
+          
+          <div class="text-center">
+            <button 
+              type="button" 
+              id="changeNumberBtn"
+              class="text-blue-500 hover:text-blue-600 text-sm font-medium">
+              Change Mobile Number
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-md mx-4">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">Welcome to StayHub!</h2>
+      <p class="text-gray-600 mb-6">Your phone number has been verified successfully.</p>
+      <button id="closeSuccessModal" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
+        Continue
+      </button>
+    </div>
+  </div>
+
+  <!-- Country Picker Modal -->
+  <div id="countryModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end justify-center">
+    <div id="countrySheet" class="bg-white w-full max-w-[760px] mx-0 rounded-t-2xl shadow-xl translate-y-full transition-transform duration-300 ease-out">
+      <div class="flex items-center justify-between px-6 py-5 border-b rounded-t-2xl">
+        <h3 class="text-lg font-semibold">Pick your Country Code</h3>
+        <button id="closeCountryModal" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="px-6 py-4">
+        <div class="flex items-center gap-2 bg-gray-100 rounded-lg px-3 py-2">
+          <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/></svg>
+          <input id="countrySearch" type="text" placeholder="Search country name or code" class="w-full bg-transparent outline-none text-sm py-1" />
+        </div>
+      </div>
+      <div class="max-h-[50vh] overflow-y-auto divide-y" id="countryList">
+        <!-- items injected by script -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js">
+   
+  </script>
+</body>
+</html>
